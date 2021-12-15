@@ -4,7 +4,7 @@
 
 ### fork from https://github.com/phamhiep2506/music-player
 
-
+`Hiện tại chỉ get nhạc việt, nhạc quốc tế sẽ ko get được, trừ khi dùng vps host vn, đang cần cao nhân chỉ cách làm`
 
 - Get Song url direct and redirect (new):
   + https://api-zingmp3-nct.vercel.app/api/songUrl?id={param-id-song}

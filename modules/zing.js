@@ -44,20 +44,6 @@ class Zing {
     });
   }
 
-  getSongUrl(id, callback) {
-    this.setCookie((cookie) => {
-      axios
-        .get(this.getUrlSong(id), {
-          headers: {
-            Cookie: `${cookie}`,
-          },
-        })
-        .then((res) => {
-          callback(res.data.data[128]);
-        });
-    });
-  }
-
   getUrlPlaylist(id) {
     let CTIME = Math.floor(Date.now() / 1000);
     let signature_playlist = encrypt.getHmac512(

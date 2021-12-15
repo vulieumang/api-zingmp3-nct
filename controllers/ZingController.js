@@ -15,9 +15,9 @@ class ZingController {
   }
 
   getSongUrl(req, res) {
-    ZingMp3.getSongUrl(req.query.id, (data) => {
+    ZingMp3.getSong(req.query.id, (data) => {
       // res.json(data)
-      res.redirect(data);
+      res.redirect(data.data[128]);
 
     })
   }
