@@ -1,0 +1,227 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+.container {
+  max-width: 576px;
+  margin: 0 auto;
+  background-color: #566573;
+  border-radius: 1.5rem;
+  position: relative;
+}
+
+body {
+  background-color: #1c2833;
+  font-family: "Poppins", sans-serif;
+  overflow-y: hidden;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.player__nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.player__btn {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+}
+
+.player__btn__playlist--toggle {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 2.5rem;
+  background: rgba(0, 0, 0, 0.08);
+  box-shadow: 0.1px 8px 8px 2px rgb(0 0 0 / 20%);
+  margin: 1rem 2rem;
+}
+
+.player__btn__playlist--toggle:hover {
+  background: linear-gradient(to right, #ff5722, #ff7043);
+}
+
+.player__btn__playlist--toggle > i {
+  margin-top: 0.5rem;
+  margin-left: 0.2rem;
+}
+
+.player__cd {
+  text-align: center;
+}
+
+.player__cd__img {
+  border-radius: 50%;
+  width: 18rem;
+  height: 18rem;
+  margin: 2rem 0;
+}
+
+.player__cd__img.active {
+  animation: cd-run-animation infinite 20s linear;
+}
+
+@keyframes cd-run-animation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.player__control__song {
+  text-align: center;
+  margin: 3rem 0;
+}
+
+.player__control__song > .player__control__song--title {
+  font-size: 2.2rem;
+  font-weight: 500;
+}
+
+.player__control__song > .player__control__song--artistsNames {
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+.player__control__buttons {
+  margin: 1rem 12rem;
+}
+
+.player__control__buttons > .btn__slider {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+#range__slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 0.4rem;
+  cursor: pointer;
+  outline: none;
+  border-radius: 0.5rem;
+  /*background: linear-gradient(90deg, #e1592e 40%, white 40%);*/
+}
+
+#range__slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: #e1592e;
+  cursor: pointer;
+}
+
+#song__time {
+  padding-left: 1rem;
+  font-size: 1.3rem;
+}
+
+.btn__navigation {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 8rem;
+}
+
+.player__btn.btn__navigation__control {
+  width: 5.5rem;
+  height: 5.5rem;
+  font-size: 3rem;
+  border: none;
+  outline: none;
+  background: rgba(0, 0, 0, 0.08);
+  box-shadow: 0.1px 8px 8px 2px rgb(0 0 0 / 20%);
+}
+.player__btn.btn__navigation__control > i {
+  margin-top: 0.5rem;
+}
+
+#btn__control {
+  background: linear-gradient(to right, #ff5722, #ff7043);
+}
+
+@media only screen and (max-width: 576px) {
+  .player__control__buttons {
+    margin: 1rem 8rem;
+  }
+}
+
+.playlist.active {
+  display: block;
+}
+
+.playlist {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  overflow-y: scroll;
+  background: #566573;
+  border-radius: 1rem;
+  display: none;
+}
+
+.playlist::-webkit-scrollbar {
+  width: 0.6rem;
+}
+
+.playlist::-webkit-scrollbar-thumb {
+  background: #ed6338;
+  border-radius: 1rem;
+}
+
+[class*="p__song-"] {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1rem 2rem 1rem 2rem;
+  padding: 1rem 1rem;
+  box-shadow: 0.1px 8px 8px 2px rgb(0 0 0 / 10%);
+  border-radius: 1rem;
+}
+
+[class*="p__song-"].active {
+  background: #1c2833;
+}
+
+.p__song__img > .p__song__img--thumbnail {
+  border-radius: 50%;
+  width: 5rem;
+  height: 5rem;
+}
+
+.p__song__icon > [class*="p__song__icon--play-"] {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 2.5rem;
+  background: rgba(0, 0, 0, 0.08);
+  box-shadow: 0.1px 8px 8px 2px rgb(0 0 0 / 20%);
+}
+
+.p__song__icon > [class*="p__song__icon--play-"] > i {
+  margin-top: 0.5rem;
+}
+
+.p__song__icon > [class*="p__song__icon--play-"]:hover {
+  background: linear-gradient(to right, #ff5722, #ff7043);
+}
+
+.p__song__icon > [class*="p__song__icon--play-"].active {
+  background: linear-gradient(to right, #ff5722, #ff7043);
+}
+
+.p__song__info {
+  font-size: 1.2rem;
+  text-align: center;
+}
