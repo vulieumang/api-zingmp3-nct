@@ -7,8 +7,8 @@
 
 
 - Get Song url direct and redirect (new):
-  + https://yourapp.app/api/songUrl?id={param-id-song}
-  > https://yourapp.app/api/songUrl?id=ZUUUEEIE
+  + https://api-zingmp3-nct.vercel.app/api/songUrl?id={param-id-song}
+  > https://api-zingmp3-nct.vercel.app/api/songUrl?id=ZUUUEEIE
  return ex:
  `https://vnso-zn-23-tf-mp3-s1-zmp3.zadn.vn/956cefbc94f87da624e9/2766204956296265927?authen=exp=1639716009~acl=/956cefbc94f87da624e9/*~hmac=e58801252685398cd353c2016765930e&fs=MTYzOTU0MzIwOTY4N3x3ZWJWNnwwfDE0LjE4OC40Mi4xNA`
 
@@ -17,25 +17,25 @@
 
 API from author
 - Get Song:
-  + https://yourapp.app/api/song?id={param-id-song}
-  > https://yourapp.app/api/song?id=ZUUUEEIE
+  + https://api-zingmp3-nct.vercel.app/api/song?id={param-id-song}
+  > https://api-zingmp3-nct.vercel.app/api/song?id=ZUUUEEIE
 
 
 - Get Playlist:
-  + https://yourapp.app/api/playlist?id={param-id-playlist}
-  > https://yourapp.app/api/playlist?id=ZWZB969E
+  + https://api-zingmp3-nct.vercel.app/api/playlist?id={param-id-playlist}
+  > https://api-zingmp3-nct.vercel.app/api/playlist?id=ZWZB969E
 
 - Get Top 100:
-  + https://yourapp.app/api/top100
-  > https://yourapp.app/api/top100
+  + https://api-zingmp3-nct.vercel.app/api/top100
+  > https://api-zingmp3-nct.vercel.app/api/top100
 
 - Get Charthome:
-  + https://yourapp.app/api/chart-home
-  > https://yourapp.app/api/chart-home
+  + https://api-zingmp3-nct.vercel.app/api/chart-home
+  > https://api-zingmp3-nct.vercel.app/api/chart-home
 
 - Get Info Song:
-  + https://yourapp.app/api/info?id={param-id-song}
-  > https://yourapp.app/api/info?id=ZUUUEEIE
+  + https://api-zingmp3-nct.vercel.app/api/info?id={param-id-song}
+  > https://api-zingmp3-nct.vercel.app/api/info?id=ZUUUEEIE
 
 ### Install Package
 
