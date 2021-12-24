@@ -3,6 +3,9 @@ const router = express.Router()
 
 const zing = require("../../controllers/ZingController")
 
+// get link***
+router.get("/link", zing.getLink)
+
 // get song
 router.get("/song", zing.getSong)
 

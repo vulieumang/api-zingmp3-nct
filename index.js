@@ -9,7 +9,7 @@ const port = process.env.PORT || 3000;
 
 // config cors
 const corsOptions = {
-  origin: "https://music-player-pink.vercel.app/",
+  // origin: "https://music-player-pink.vercel.app/",
   optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
 
@@ -20,11 +20,14 @@ app.set("view engine", "ejs"); // set template view engine use ejs
 
 // ROUTE HOME
 const homeRoute = require("./routers/home");
-app.use("/", cors(corsOptions), homeRoute);
+// app.use("/", cors(corsOptions), homeRoute);
+app.use("/", homeRoute);
+
 
 // API
 const apiRoute = require("./routers/api/zing");
-app.use("/api", cors(corsOptions), apiRoute);
+// app.use("/api", cors(corsOptions), apiRoute);
+app.use("/api", apiRoute);
 
 // Page Error
 app.get("*", function (req, res) {
