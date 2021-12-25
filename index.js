@@ -29,6 +29,11 @@ const apiRoute = require("./routers/api/zing");
 // app.use("/api", cors(corsOptions), apiRoute);
 app.use("/api", apiRoute);
 
+app.get('/README.md', function (req, res) {
+  // res.send('random.text')
+  res.sendFile(path.join(__dirname, "README.md"));
+})
+
 // Page Error
 app.get("*", function (req, res) {
   res.send("nhap sai link roi ban oi !!!");
