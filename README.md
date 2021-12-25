@@ -9,7 +9,7 @@
 - Get from link support song and album
   + https://api-zingmp3-nct.vercel.app/api/link?id={url}
   > https://api-zingmp3-nct.vercel.app/api/link?id=https://zingmp3.vn/album/La-Con-Gai-Phai-Xinh-Single-Bao-Thy-Kimmese/ZOZ7I06Z.html
-  return title link thumnail id
+  return title, link mp3, thumbnail, id
 
 - Get from link support song and album and redirect mp3 link
   + https://api-zingmp3-nct.vercel.app/api/linkRedirect?id={url}
