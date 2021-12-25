@@ -12,6 +12,12 @@ const corsOptions = {
   // origin: "https://music-player-pink.vercel.app/",
   optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 
 // Config app use
 app.use(express.static(path.join(__dirname, "public"))); // set static file
