@@ -21,7 +21,7 @@ class ZingController {
         const title = data.data.title
         ZingMp3.getSong(id_first, (data) => {
           data.id = id_first
-          data.thumnail = thumnail.replace('w240','w320')
+          data.thumnail = thumnail.replace('w240','w600')
           data.artistsNames = artistsNames
           data.title = title
           res.json({data})

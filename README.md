@@ -6,13 +6,24 @@
 
 `Hiện tại chỉ get nhạc việt, nhạc quốc tế sẽ ko get được, trừ khi dùng vps host vn, đang cần cao nhân chỉ cách làm`
 
+- Get from link support song and album
+  + https://api-zingmp3-nct.vercel.app/api/link?id={url}
+  > https://api-zingmp3-nct.vercel.app/api/link?id=https://zingmp3.vn/album/La-Con-Gai-Phai-Xinh-Single-Bao-Thy-Kimmese/ZOZ7I06Z.html
+  return title link thumnail id
+
+- Get from link support song and album and redirect mp3 link
+  + https://api-zingmp3-nct.vercel.app/api/linkRedirect?id={url}
+  > https://api-zingmp3-nct.vercel.app/api/linkRedirect?id=https://zingmp3.vn/album/La-Con-Gai-Phai-Xinh-Single-Bao-Thy-Kimmese/ZOZ7I06Z.html
+  return title link mp3 file
+
+
 - Get Song url direct and redirect (new):
   + https://api-zingmp3-nct.vercel.app/api/songUrl?id={param-id-song}
   > https://api-zingmp3-nct.vercel.app/api/songUrl?id=ZUUUEEIE
  return ex:
  `https://vnso-zn-23-tf-mp3-s1-zmp3.zadn.vn/956cefbc94f87da624e9/2766204956296265927?authen=exp=1639716009~acl=/956cefbc94f87da624e9/*~hmac=e58801252685398cd353c2016765930e&fs=MTYzOTU0MzIwOTY4N3x3ZWJWNnwwfDE0LjE4OC40Mi4xNA`
 
-## Get link NCT, I'm find how to? anyone help me?
+## Get link NCT WIP
 
 
 API from author
