@@ -1,6 +1,6 @@
-## Get link zing mp3 url
+## Get link zing mp3 nct url
 
-### Big thank to phamhiep2506 for great code
+### Big thank to phamhiep2506 and https://github.com/whoant/nhaccuatui-api
 
 ### fork from https://github.com/phamhiep2506/music-player
 
@@ -9,11 +9,13 @@
 - Get from link support song and album
   + https://api-zingmp3-nct.vercel.app/api/link?id={url}
   > https://api-zingmp3-nct.vercel.app/api/link?id=https://zingmp3.vn/album/La-Con-Gai-Phai-Xinh-Single-Bao-Thy-Kimmese/ZOZ7I06Z.html
+  > https://api-zingmp3-nct.vercel.app/api/link?id=https://www.nhaccuatui.com/bai-hat/nguoi-em-co-do-rum-ft-daa.l6TIwWBOHPwd.html
   return title, link mp3, thumbnail, id
 
 - Get from link support song and album and redirect mp3 link
   + https://api-zingmp3-nct.vercel.app/api/linkRedirect?id={url}
   > https://api-zingmp3-nct.vercel.app/api/linkRedirect?id=https://zingmp3.vn/album/La-Con-Gai-Phai-Xinh-Single-Bao-Thy-Kimmese/ZOZ7I06Z.html
+  > https://api-zingmp3-nct.vercel.app/api/linkRedirect?id=https://www.nhaccuatui.com/bai-hat/nguoi-em-co-do-rum-ft-daa.l6TIwWBOHPwd.html
   return title link mp3 file
 
 
