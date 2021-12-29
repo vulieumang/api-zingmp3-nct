@@ -11,11 +11,6 @@ class HomeController {
       "index"
     )
   }
-  readme(req, res) {
-    res.render(
-      "readme"
-    )
-  }
 }
 
 module.exports = new HomeController

@@ -9,6 +9,9 @@ router.get("/link", zing.getLink)
 // get linkRedirect
 router.get("/linkRedirect", zing.getLinkRedirect)
 
+// get search
+router.get("/search", zing.getSearch)
+
 // get song
 router.get("/song", zing.getSong)
 
