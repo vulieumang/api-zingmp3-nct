@@ -105,6 +105,24 @@ class ZingController {
     })
   }
 
+  download(req, res) {
+    var url_parts = req.query.id.replace(/\/\s*$/,'').split('/'); 
+    var id = url_parts[5].replace(".html","");
+    if(url_parts[3]=='bai-hat'){
+      ZingMp3.getSong(id, (data) => {
+        res.redirect(data.data[128]+'&filename='+data.title+'.mp3');
+      })
+    }
+    if(url_parts[3]=='album'){
+      ZingMp3.getPlaylist(id, (data) => {
+        const id_first = data.data.song.items[0].encodeId
+        ZingMp3.getSong(id_first, (data) => {
+          res.redirect(data.data[128]+'&filename='+data.title+'.mp3');
+        })
+      })
+    }
+  }
+
   getPlaylist(req, res) {
     ZingMp3.getPlaylist(req.query.id, (data) => {
       res.json(data)

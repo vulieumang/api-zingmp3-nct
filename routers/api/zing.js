@@ -18,6 +18,9 @@ router.get("/song", zing.getSong)
 // get songUrl
 router.get("/songUrl", zing.getSongUrl)
 
+// get download
+router.get("/download", zing.download)
+
 // get playlist
 router.get("/playlist", zing.getPlaylist)
 
