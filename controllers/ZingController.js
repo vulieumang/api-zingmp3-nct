@@ -111,14 +111,12 @@ class ZingController {
       const id_first = data.data.encodeId
       const thumbnail = data.data.thumbnailM
       const artistsNames = getArtistName(data.data)
-      console.log(artistsNames)
       const title = data.data.title
       ZingMp3.getSong(id_first, (data) => {
         data.id = id_first
         data.thumbnail = thumbnail.replace('w240','w600')
         data.artistsNames = artistsNames
         data.title = title
-        
         res.redirect(data.data[128]+'&filename='+title+' - '+artistsNames+'.mp3');
       })
     })
