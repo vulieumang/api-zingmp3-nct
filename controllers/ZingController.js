@@ -51,7 +51,7 @@ class ZingController {
         ZingMp3.getInfo(id, (data) => {
           const id_first = data.data.encodeId
           const thumbnail = data.data.thumbnailM
-          const artistsNames = data.data.artistsNames
+          const artistsNames = getArtistName(data.data)
           const title = data.data.title
           ZingMp3.getSong(id_first, (data) => {
             data.id = id_first
@@ -66,7 +66,7 @@ class ZingController {
         ZingMp3.getPlaylist(id, (data) => {
           const id_first = data.data.song.items[0].encodeId
           const thumbnail = data.data.song.items[0].thumbnailM
-          const artistsNames = data.data.song.items[0].artistsNames
+          const artistsNames = getArtistName(data.data.song.items[0])
           const title = data.data.song.items[0].title
           ZingMp3.getSong(id_first, (data) => {
             data.id = id_first
@@ -106,21 +106,23 @@ class ZingController {
   }
 
   download(req, res) {
-    var url_parts = req.query.id.replace(/\/\s*$/,'').split('/'); 
-    var id = url_parts[5].replace(".html","");
-    if(url_parts[3]=='bai-hat'){
-      ZingMp3.getSong(id, (data) => {
-        res.redirect(data.data[128]+'&filename='+data.title+'.mp3');
+    var id = req.query.id
+    ZingMp3.getInfo(id, (data) => {
+      const id_first = data.data.encodeId
+      const thumbnail = data.data.thumbnailM
+      const artistsNames = getArtistName(data.data)
+      console.log(artistsNames)
+      const title = data.data.title
+      ZingMp3.getSong(id_first, (data) => {
+        data.id = id_first
+        data.thumbnail = thumbnail.replace('w240','w600')
+        data.artistsNames = artistsNames
+        data.title = title
+        
+        res.redirect(data.data[128]+'&filename='+title+' - '+artistsNames+'.mp3');
       })
-    }
-    if(url_parts[3]=='album'){
-      ZingMp3.getPlaylist(id, (data) => {
-        const id_first = data.data.song.items[0].encodeId
-        ZingMp3.getSong(id_first, (data) => {
-          res.redirect(data.data[128]+'&filename='+data.title+'.mp3');
-        })
-      })
-    }
+    })
+    
   }
 
   getPlaylist(req, res) {
@@ -146,6 +148,23 @@ class ZingController {
       res.json(data)
     })
   }
+  
+}
+
+function getArtistName(song){
+  var artistsNames;
+  if(song.artists){
+    artistsNames = song.artists.reduce(function(previous, current){
+      if(previous.name){
+        previous = previous.name
+      }
+      return previous + ', ' + current.name;
+    })
+  }
+  else{
+    artistsNames = song.artistsNames
+  }
+  return artistsNames;
 }
 
 module.exports = new ZingController
